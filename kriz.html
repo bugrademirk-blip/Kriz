@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Veda Sahnesi</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+  body {
+    margin: 0;
+    background: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Caveat', cursive;
+  }
+  svg { display: block; }
+  .tear { animation: fall linear infinite; }
+  @keyframes fall {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(28px); opacity: 0; }
+  }
+  .sob { animation: sob 1.1s ease-in-out infinite; }
+  @keyframes sob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+  .shake {
+    animation: shake 0.25s infinite alternate;
+    transform-origin: center;
+  }
+  @keyframes shake {
+    0% { transform: rotate(-2deg) translateX(-1px); }
+    100% { transform: rotate(2deg) translateX(1px); }
+  }
+  .car-idle { animation: carIdle 2s ease-in-out infinite; }
+  @keyframes carIdle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+  .bubble { animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.6s both; }
+  @keyframes popIn {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  .heart { animation: heartbeat 0.8s ease-in-out infinite; transform-origin: center; }
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.35); }
+  }
+  .float-up {
+    animation: floatUp 2s ease-in infinite;
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(0); opacity: 0.8; }
+    100% { transform: translateY(-45px); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+<svg width="800" height="580" viewBox="0 0 800 580" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f0c29"/>
+      <stop offset="100%" stop-color="#302b63"/>
+    </linearGradient>
+    <radialGradient id="glowPink" cx="35%" cy="65%" r="28%">
+      <stop offset="0%" stop-color="#ff6b9d" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="glowPurple" cx="62%" cy="65%" r="22%">
+      <stop offset="0%" stop-color="#a29bfe" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <filter id="blur2"><feGaussianBlur stdDeviation="2"/></filter>
+  </defs>
+
+  <rect width="800" height="580" fill="url(#bgGrad)"/>
+  <rect width="800" height="580" fill="url(#glowPink)"/>
+  <rect width="800" height="580" fill="url(#glowPurple)"/>
+
+  <!-- Stars -->
+  <g opacity="0.55">
+    <circle cx="55" cy="38" r="1.5" fill="white"/><circle cx="130" cy="22" r="1" fill="white"/>
+    <circle cx="210" cy="52" r="1.5" fill="white"/><circle cx="360" cy="28" r="1" fill="white"/>
+    <circle cx="510" cy="18" r="1.5" fill="white"/><circle cx="630" cy="42" r="1" fill="white"/>
+    <circle cx="725" cy="28" r="1.5" fill="white"/><circle cx="775" cy="58" r="1" fill="white"/>
+    <circle cx="685" cy="14" r="1" fill="white"/><circle cx="92" cy="78" r="1" fill="white"/>
+  </g>
+
+  <!-- Office building -->
+  <rect x="50" y="95" width="700" height="435" rx="4" fill="#1e1e38" stroke="#3a3a6a" stroke-width="1.5"/>
+  <rect x="80" y="125" width="60" height="40" rx="3" fill="#ffe066" opacity="0.65"/>
+  <rect x="160" y="125" width="60" height="40" rx="3" fill="#4a6fa5" opacity="0.4"/>
+  <rect x="580" y="125" width="60" height="40" rx="3" fill="#4a6fa5" opacity="0.4"/>
+  <rect x="660" y="125" width="60" height="40" rx="3" fill="#ffe066" opacity="0.65"/>
+  <rect x="335" y="300" width="130" height="165" rx="6" fill="#2a2a50" stroke="#5a5a9a" stroke-width="2"/>
+  <rect x="345" y="310" width="50" height="140" rx="4" fill="#1a1a35" stroke="#4a4a8a" stroke-width="1"/>
+  <rect x="403" y="310" width="50" height="140" rx="4" fill="#1a1a35" stroke="#4a4a8a" stroke-width="1"/>
+  <rect x="390" y="380" width="16" height="4" rx="2" fill="#aaa"/>
+  <rect x="390" y="390" width="16" height="4" rx="2" fill="#aaa"/>
+  <rect x="50" y="465" width="700" height="4" fill="#3a3a6a" opacity="0.7"/>
+  <rect x="0" y="469" width="800" height="111" fill="#151525"/>
+  <rect x="0" y="469" width="800" height="5" fill="#2a2a50"/>
+
+  <!-- CAR -->
+  <g class="car-idle" style="transform-origin: 645px 452px">
+    <rect x="545" y="422" width="200" height="58" rx="12" fill="#c0392b"/>
+    <path d="M580 422 Q595 388 645 380 Q695 388 710 422 Z" fill="#a93226"/>
+    <path d="M587 422 Q597 398 628 390 Q643 388 648 390 Q658 393 663 422 Z" fill="#85c1e9" opacity="0.8"/>
+    <path d="M666 422 Q671 396 692 393 Q702 393 708 422 Z" fill="#85c1e9" opacity="0.75"/>
+    <circle cx="578" cy="480" r="22" fill="#222"/><circle cx="578" cy="480" r="14" fill="#555"/><circle cx="578" cy="480" r="6" fill="#888"/>
+    <circle cx="708" cy="480" r="22" fill="#222"/><circle cx="708" cy="480" r="14" fill="#555"/><circle cx="708" cy="480" r="6" fill="#888"/>
+    <ellipse cx="745" cy="443" rx="8" ry="5" fill="#ffe066" opacity="0.9"/>
+    <ellipse cx="745" cy="443" rx="18" ry="11" fill="#ffe066" opacity="0.18" filter="url(#blur2)"/>
+    <rect x="545" y="434" width="12" height="8" rx="3" fill="#ff4444" opacity="0.9"/>
+    <circle cx="672" cy="407" r="12" fill="#1a1a2e"/>
+  </g>
+
+  <!-- ===== PEMBELİ KIZ — KIVIRCIK SAÇ, SADECE AĞLIYOR ===== -->
+  <g class="sob" style="transform-origin: 244px 385px">
+    <rect x="204" y="328" width="70" height="116" rx="18" fill="#e91e8c"/>
+    <rect x="212" y="435" width="22" height="53" rx="9" fill="#e91e8c"/>
+    <rect x="244" y="435" width="22" height="53" rx="9" fill="#e91e8c"/>
+    <ellipse cx="223" cy="488" rx="16" ry="8" fill="#2d2d2d"/>
+    <ellipse cx="255" cy="488" rx="16" ry="8" fill="#2d2d2d"/>
+
+    <!-- Head -->
+    <circle cx="244" cy="284" r="44" fill="#fdbcb4"/>
+
+    <!-- KIVIRCIK SAÇ -->
+    <!-- Base mass -->
+    <ellipse cx="244" cy="262" rx="46" ry="35" fill="#2c1108"/>
+    <!-- Individual curls as circles/arcs -->
+    <circle cx="202" cy="270" r="14" fill="#3d1c0a"/>
+    <circle cx="210" cy="250" r="13" fill="#2c1108"/>
+    <circle cx="225" cy="240" r="12" fill="#3d1c0a"/>
+    <circle cx="244" cy="236" r="12" fill="#2c1108"/>
+    <circle cx="263" cy="240" r="12" fill="#3d1c0a"/>
+    <circle cx="278" cy="252" r="13" fill="#2c1108"/>
+    <circle cx="285" cy="272" r="13" fill="#3d1c0a"/>
+    <circle cx="284" cy="292" r="11" fill="#2c1108"/>
+    <!-- Extra curl loops -->
+    <path d="M200 282 Q186 298 194 314 Q200 326 210 316" stroke="#3d1c0a" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M198 295 Q184 310 190 324" stroke="#2c1108" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M287 284 Q302 298 296 314 Q290 326 280 317" stroke="#3d1c0a" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M289 296 Q304 310 298 324" stroke="#2c1108" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <!-- Top curl wisps -->
+    <path d="M228 240 Q222 222 232 212 Q240 204 244 214" stroke="#4a2010" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M258 240 Q264 222 256 212 Q248 204 244 214" stroke="#3d1c0a" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M244 236 Q240 216 248 208" stroke="#4a2010" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+    <!-- Eyes shut crying -->
+    <path d="M224 292 Q232 286 240 292" stroke="#333" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M250 292 Q258 286 266 292" stroke="#333" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- Furrowed brows -->
+    <path d="M221 278 Q231 272 240 277" stroke="#2c1108" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M249 277 Q258 272 267 278" stroke="#2c1108" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- Mouth open sobbing — NO speech bubble -->
+    <path d="M231 314 Q245 330 259 314" fill="#ff8888" stroke="#c0392b" stroke-width="2" stroke-linecap="round"/>
+    <rect x="234" y="314" width="22" height="8" rx="2" fill="white" opacity="0.85"/>
+    <!-- Red nose -->
+    <ellipse cx="244" cy="307" rx="6" ry="4.5" fill="#ffb3b3" opacity="0.85"/>
+    <!-- Blush -->
+    <ellipse cx="222" cy="310" rx="12" ry="7" fill="#ff6b6b" opacity="0.28"/>
+    <ellipse cx="267" cy="310" rx="12" ry="7" fill="#ff6b6b" opacity="0.28"/>
+
+    <!-- TEARS — ÇOOOOK FAZLA -->
+    <ellipse cx="229" cy="302" rx="3.5" ry="7" fill="#7ecef4" opacity="0.95" class="tear" style="animation-duration:0.75s"/>
+    <ellipse cx="260" cy="302" rx="3.5" ry="7" fill="#7ecef4" opacity="0.95" class="tear" style="animation-duration:0.6s; animation-delay:0.15s"/>
+    <ellipse cx="222" cy="307" rx="2.5" ry="5" fill="#7ecef4" opacity="0.85" class="tear" style="animation-duration:0.9s; animation-delay:0.3s"/>
+    <ellipse cx="267" cy="306" rx="2.5" ry="5" fill="#7ecef4" opacity="0.85" class="tear" style="animation-duration:0.7s; animation-delay:0.1s"/>
+    <ellipse cx="235" cy="304" rx="2" ry="4" fill="#7ecef4" opacity="0.7" class="tear" style="animation-duration:1s; animation-delay:0.5s"/>
+    <ellipse cx="254" cy="305" rx="2" ry="4" fill="#7ecef4" opacity="0.7" class="tear" style="animation-duration:0.85s; animation-delay:0.4s"/>
+    <ellipse cx="244" cy="303" rx="2" ry="3.5" fill="#7ecef4" opacity="0.6" class="tear" style="animation-duration:1.1s; animation-delay:0.6s"/>
+    <!-- Tear pool on cheeks -->
+    <ellipse cx="220" cy="320" rx="8" ry="4" fill="#7ecef4" opacity="0.3"/>
+    <ellipse cx="268" cy="318" rx="8" ry="4" fill="#7ecef4" opacity="0.3"/>
+
+    <!-- Arms hugging -->
+    <path d="M204 350 Q176 362 180 396 Q182 414 214 408" stroke="#e91e8c" stroke-width="19" fill="none" stroke-linecap="round"/>
+    <path d="M274 350 Q302 362 298 396 Q296 414 266 408" stroke="#e91e8c" stroke-width="19" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- ===== MOR KIZ — KRİZDE, SADECE "AQ" DİYOR ===== -->
+  <g class="shake" style="transform-origin: 320px 385px">
+    <rect x="290" y="328" width="68" height="116" rx="18" fill="#6c5ce7"/>
+    <rect x="298" y="435" width="22" height="53" rx="9" fill="#6c5ce7"/>
+    <rect x="328" y="435" width="22" height="53" rx="9" fill="#6c5ce7"/>
+    <ellipse cx="309" cy="488" rx="16" ry="8" fill="#3d3d3d"/>
+    <ellipse cx="339" cy="488" rx="16" ry="8" fill="#3d3d3d"/>
+
+    <!-- Head -->
+    <circle cx="324" cy="282" r="42" fill="#fdbcb4"/>
+    <!-- Straight hair -->
+    <path d="M284 264 Q281 217 310 197 Q338 184 354 201 Q372 219 367 264 Q358 245 340 241 Q322 235 307 245 Q293 255 288 271 Z" fill="#6b2d0a"/>
+    <path d="M284 274 Q274 299 280 324" stroke="#6b2d0a" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M365 274 Q375 299 369 324" stroke="#6b2d0a" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M366 237 Q390 227 394 254 Q389 277 368 261" fill="#6b2d0a"/>
+
+    <!-- Eyes normal -->
+    <ellipse cx="309" cy="289" rx="9" ry="8" fill="white"/>
+    <ellipse cx="338" cy="289" rx="9" ry="8" fill="white"/>
+    <circle cx="310" cy="290" r="5" fill="#333"/>
+    <circle cx="337" cy="290" r="5" fill="#333"/>
+    <circle cx="312" cy="288" r="1.5" fill="white"/>
+    <circle cx="339" cy="288" r="1.5" fill="white"/>
+
+    <!-- Eyebrows normal -->
+    <path d="M300 278 Q309 274 319 278" stroke="#6b2d0a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M328 278 Q337 274 347 278" stroke="#6b2d0a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Mouth neutral -->
+    <path d="M312 308 Q323 314 334 308" stroke="#c0392b" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+    <!-- Arm reaching to hug pink girl -->
+    <path d="M290 352 Q264 364 268 392 Q270 410 248 405" stroke="#6c5ce7" stroke-width="18" fill="none" stroke-linecap="round"/>
+
+    <!-- Luggage -->
+    <rect x="358" y="360" width="46" height="56" rx="8" fill="#f39c12"/>
+    <rect x="365" y="348" width="11" height="14" rx="4" stroke="#f39c12" stroke-width="3" fill="none"/>
+    <rect x="378" y="348" width="11" height="14" rx="4" stroke="#f39c12" stroke-width="3" fill="none"/>
+    <rect x="360" y="382" width="42" height="3" rx="1.5" fill="#e67e22"/>
+    
+    <text x="381" y="399" text-anchor="middle" font-family="Caveat,cursive" font-size="13" fill="white" font-weight="bold">düzey</text>
+  </g>
+
+  <!-- "AQ" bubble — MOR KIZdan çıkıyor, sol tarafa -->
+  <g class="bubble" style="transform-origin: 175px 178px">
+    <rect x="82" y="148" width="160" height="80" rx="16" fill="#ff2d55"/>
+    <!-- tail toward RIGHT (purple girl direction) -->
+    <polygon points="242,183 276,200 242,208" fill="#ff2d55"/>
+    <text x="162" y="195" text-anchor="middle" font-family="Caveat,cursive" font-size="28" fill="white" font-weight="bold">krize girdi</text>
+    <text x="162" y="222" text-anchor="middle" font-family="Caveat,cursive" font-size="28" fill="white" font-weight="bold">aq</text>
+  </g>
+
+
+
+  <!-- Tear puddle floor -->
+  <ellipse cx="248" cy="496" rx="52" ry="11" fill="#7ecef4" opacity="0.2"/>
+  <ellipse cx="248" cy="496" rx="33" ry="7" fill="#7ecef4" opacity="0.16"/>
+
+  <!-- Title -->
+  <text x="400" y="52" text-anchor="middle" font-family="Caveat,cursive" font-size="30" fill="#ff9de2" font-weight="bold">İşten Ayrılış Günü</text>
+  <text x="400" y="78" text-anchor="middle" font-family="Caveat,cursive" font-size="15" fill="#9999cc" opacity="0.7">araba bekliyor... ama o gitmiyor...</text>
+</svg>
+</body>
+</html>
